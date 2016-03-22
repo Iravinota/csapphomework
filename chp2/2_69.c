@@ -25,5 +25,8 @@ int main()
 	printf("%x\n", rotate_right(0x12345678, 4));
 	printf("%x\n", rotate_right(0x12345678, 20));
 	printf("%x\n", rotate_right(0x12345678, 0));
+	for (int i = 0; i < w; i++) {
+		printf("%x\n", rotate_right(0x12345678, i));
+	}
 	return 0;
 }
