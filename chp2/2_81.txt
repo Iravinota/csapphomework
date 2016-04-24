@@ -1,0 +1,5 @@
+A: y=INT_MIN
+B: true
+C: x=0, y=0
+D: true. -a = 2^w - a
+E: true
