@@ -15,12 +15,15 @@ float_bits float_half(float_bits f)
 	unsigned exp = f >> 23 & 0xFF;
 	unsigned frac = f & 0x7FFFFF;
 
-	if (exp == 0xFF && frac != 0) {
+	if (exp == 0xFF && frac != 0) { /*NaN*/
 		return f;
 	} else if (exp == 0) {
-		frac >> 1;
+		frac = frac >> 1;
 	} else {
-		exp >> 1;
+		exp -= 1;
+		if (exp == 0) {
+			frac = frac >> 1 | 0x400000;
+		}
 	}
 
 	return (sign << 31) | (exp << 23) | frac;
