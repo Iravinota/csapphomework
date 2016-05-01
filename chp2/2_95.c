@@ -23,7 +23,7 @@ float_bits float_i2f(int i)
 		i = (~i) + 1;
 	}
 	for (k = 0; k < 32; k++) {
-		if ((i << k) & 0x80000000 == 0x80000000) {
+		if (((i << k) & 0x80000000) == 0x80000000) {
 			break;
 		}
 	}
